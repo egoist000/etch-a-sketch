@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* Header */
+
+.header h1 {
+    text-align: end;
+    font-size: 3rem;
+    margin-right: 4rem;
+}
+
+/* Main content */
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Grid */
+
+#grid {
+    display: grid;
+    width: 512px;
+    height: 512px;
+    border: 0.1rem solid #7F7F7F;
+    gap: 0.0001rem;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    box-shadow: 0.1rem 0.1rem 1rem 0.1rem #262626;
+}
+
+.cell {
+    padding: 0;
+    margin: 0;
+    border: 0.1rem solid #7F7F7F;
+}
+
+/* Settings */
+
+.main h1 {
+    color: #363632;
+}
