@@ -18,29 +18,42 @@
     </div>
     <div class="main">
         <div class="settings">
-            <h1>Settings:</h1>
-            <div class="color-setting">
-                <input id="color-picker" type="color">
-                <div class="setting-img">
-                    <span>Color</span>
-                    <img src="icons/color.png" alt="color">
+            <div class="main-settings">
+                <h1>Settings:</h1>
+                <div class="color-setting">
+                    <input id="color-picker" type="color">
+                    <div class="setting-img">
+                        <span>Color</span>
+                        <img src="icons/color.png" alt="color">
+                    </div>
                 </div>
+                <button class="rainbow">Rainbow
+                    <img class="rainbow" src="icons/rainbow-default.png" alt="rainbow">
+                </button>
+                <button class="clear">Clear
+                    <img class="clear" src="icons/trash-default.png" alt="trash bin">
+                </button>
+                <button class="erase">Eraser
+                    <img class="erase" src="icons/eraser-default.png" alt="eraser">
+                </button>
             </div>
-            <div class="toggle-grid-outlines">
-                <span>Grid outlines</span>
-                <label class="switch">
-                    <input id="check" type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <div class="grid-size">
-                <output id="size-output">16x16</output>
-                <div class="slider-container">
-                    <input id="size" type="range" min="1" max="64" step="1">
+            <div class="secondary-settings">
+                <div class="grid-size">
+                    <output id="size-output">16x16</output>
+                    <div class="slider-container">
+                        <input id="size" type="range" min="1" max="64" step="1">
+                    </div>
+                    <div class="setting-img">
+                        <span>Grid Size</span>
+                        <img src="icons/grid.png" alt="grid">
+                    </div>
                 </div>
-                <div class="setting-img">
-                    <span>Grid Size</span>
-                    <img src="icons/grid.png" alt="grid">
+                <div class="toggle-grid-outlines">
+                    <span>Grid outlines</span>
+                    <label class="switch">
+                        <input id="check" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
                 </div>
             </div>
         </div>
