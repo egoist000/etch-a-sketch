@@ -17,21 +17,36 @@
         <h1>:Etch-a-Sketch</h1>
     </div>
     <div class="main">
-        <div id="grid">
+        <div class="settings">
+            <h1>Settings:</h1>
+            <div class="color-setting">
+                <input id="color-picker" type="color">
+                <div class="setting-img">
+                    <span>Color</span>
+                    <img src="icons/color.png" alt="color">
+                </div>
+            </div>
+            <div class="toggle-grid-outlines">
+                <span>Grid outlines</span>
+                <label class="switch">
+                    <input id="check" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="grid-size">
+                <output id="size-output">16x16</output>
+                <div class="slider-container">
+                    <input id="size" type="range" min="1" max="64" step="1">
+                </div>
+                <div class="setting-img">
+                    <span>Grid Size</span>
+                    <img src="icons/grid.png" alt="grid">
+                </div>
+            </div>
         </div>
-    </div>
-    <h1>Settings:</h1>
-    <div class="settings">
-        <div class="color-setting">
-            <span>Color:</span>
-            <input id="color-picker" type="color">
-        </div>
-        <div class="toggle-grid-outlines">
-            <span>Toggle grid outlines</span>
-            <label class="switch">
-                <input id="check" type="checkbox">
-                <span class="slider round"></span>
-            </label>
+        <div class="grid-container">
+            <div id="grid">
+            </div>
         </div>
     </div>
 </body>
