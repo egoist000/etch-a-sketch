@@ -13,55 +13,71 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
-    <div class="header">
-        <h1>:Etch-a-Sketch</h1>
-    </div>
-    <div class="main">
-        <div class="settings">
-            <div class="main-settings">
-                <h1>Settings:</h1>
-                <div class="color-setting">
-                    <input id="color-picker" type="color">
-                    <div class="setting-img">
-                        <span>Color</span>
-                        <img src="icons/color.png" alt="color">
+    <div class="container">
+        <div class="header">
+            <h1>:Etch-a-Sketch</h1>
+        </div>
+        <div class="main">
+            <div class="settings">
+                <div class="main-settings">
+                    <h1>Settings:</h1>
+                    <div class="color-setting">
+                        <input id="color-picker" type="color">
+                        <div class="setting-img">
+                            <span>Color</span>
+                            <img src="icons/color.png" alt="color">
+                        </div>
+                    </div>
+                    <button class="draw">Draw
+                        <img class="draw" src="icons/draw-click.png" alt="draw">
+                    </button>
+                    <button class="light">Lighten
+                        <img class="light" src="icons/light-default.png">
+                    </button>
+                    <button class="shadow">Shadow
+                        <img class="shadow" src="icons/shadow-default.png">
+                    </button>
+                    <button class="rainbow">Rainbow
+                        <img class="rainbow" src="icons/rainbow-default.png" alt="rainbow">
+                    </button>
+                    <button class="erase">Eraser
+                        <img class="erase" src="icons/erase-default.png" alt="eraser">
+                    </button>
+                    <button class="clear">Clear
+                        <img class="clear" src="icons/clear-default.png" alt="trash bin">
+                    </button>
+                </div>
+                <div class="secondary-settings">
+                    <div class="grid-size">
+                        <output id="size-output">16x16</output>
+                        <div class="slider-container">
+                            <input id="size" type="range" min="1" max="64" step="1">
+                        </div>
+                        <div class="setting-img">
+                            <span>Grid Size</span>
+                            <img src="icons/grid.png" alt="grid">
+                        </div>
+                    </div>
+                    <div class="toggle-grid-outlines">
+                        <span>Grid outlines</span>
+                        <label class="switch">
+                            <input id="check" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
                     </div>
                 </div>
-                <button class="draw">Draw
-                    <img class="draw" src="icons/draw-click.png" alt="draw">
-                </button>
-                <button class="rainbow">Rainbow
-                    <img class="rainbow" src="icons/rainbow-default.png" alt="rainbow">
-                </button>
-                <button class="erase">Eraser
-                    <img class="erase" src="icons/erase-default.png" alt="eraser">
-                </button>
-                <button class="clear">Clear
-                    <img class="clear" src="icons/clear-default.png" alt="trash bin">
-                </button>
             </div>
-            <div class="secondary-settings">
-                <div class="grid-size">
-                    <output id="size-output">16x16</output>
-                    <div class="slider-container">
-                        <input id="size" type="range" min="1" max="64" step="1">
-                    </div>
-                    <div class="setting-img">
-                        <span>Grid Size</span>
-                        <img src="icons/grid.png" alt="grid">
-                    </div>
-                </div>
-                <div class="toggle-grid-outlines">
-                    <span>Grid outlines</span>
-                    <label class="switch">
-                        <input id="check" type="checkbox">
-                        <span class="slider round"></span>
-                    </label>
+            <div class="grid-container">
+                <div id="grid">
                 </div>
             </div>
         </div>
-        <div class="grid-container">
-            <div id="grid">
+        <div class="footer">
+            <h2>GitHub:</h2>
+            <div class="github-logo">
+                <a href="https://github.com/egoist000">
+                    <img src="icons/GitHub-Mark-32px.png" alt="MyGithubProfile">
+                </a>
             </div>
         </div>
     </div>

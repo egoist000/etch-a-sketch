@@ -1,4 +1,4 @@
-body {
+body, html{
     margin: 0;
     padding: 0;
     height: 100%;
@@ -9,10 +9,16 @@ body {
     font-family: 'Roboto Mono', monospace;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
 /* Header */
 
 .header {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .header h1 {
@@ -25,6 +31,7 @@ body {
 /* Main content */
 .main {
     display: flex;
+    flex: 1 0 auto;
     flex-wrap: wrap-reverse;
     justify-content: center;
     gap: 4rem;
@@ -94,7 +101,6 @@ body {
     justify-content: center;
     align-content: center;
     gap: 1rem;
-    padding-bottom: 2rem;
 }
 
 .secondary-settings {
@@ -226,6 +232,37 @@ button {
 button:hover {
     transform: scale(1.1, 1.1);
     color: white;
+}
+
+/* Footer */
+
+.footer {
+    display: flex;
+    flex-shrink: 0;
+    height: 3rem;
+    margin-top: 3rem;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.footer h2 {
+    margin: 0 0.8rem 0 0;
+}
+
+/* GitHub animation */
+@keyframes githubAnimation {
+    0%   {transform: scale(1, 1);}
+    25%  {transform: scale(1.5, 0.8);}
+    50%  {transform: scale(0.5, 1.1);}
+    75%  {transform: scale(1, 0.8);}
+    100% {transform: scale(1, 1);}
+}
+
+.github-logo:hover {
+    position: relative;
+    animation-name: githubAnimation;
+    animation-duration: 2s;
 }
 
 @media only screen and (max-width: 480px) {
