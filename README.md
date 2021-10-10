@@ -1,2 +1,3 @@
 # etch-a-sketch
-sketchpad using JS
+### A sketchpad using JS
+![screenshot](screenshot.png)
