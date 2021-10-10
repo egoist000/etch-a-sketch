@@ -1,5 +1,5 @@
 const DEFAULT_SIZE = 16; // 16x16 is default size
-const DEFAULT_OP = "color";
+const DEFAULT_OP = "draw";
 const RAINBOW_COLORS = ["violet", "indigo", "blue", "green", "yellow", "orange", "red"];
 const grid = document.getElementById("grid");
 const checkBox = document.getElementById("check");
@@ -15,6 +15,19 @@ let rainbowIteration = 0;
 
 function deleteGridCells() {
     grid.innerHTML = "";
+}
+
+function doOperation() {
+    switch(currentOperation) {
+        case "erase":
+            currentColor = "white";
+            break;
+        case "rainbow":
+            rainbow();
+            break;
+        default:
+            break;
+    }
 }
 
 function clearGrid() {
@@ -33,21 +46,15 @@ function rainbow() {
     }
 }
 
-function cellHover(e) {
-    switch(currentOperation) {
-        case "erase":
-            currentColor = "white";
-            break;
-        case "rainbow":
-            rainbow();
-            break;
-        default:
-            break;
+function cellClickAndHover(e) {
+    if(e.buttons >= 1) {
+        doOperation();
+        e.target.style.backgroundColor = currentColor;
     }
-    e.target.style.backgroundColor = currentColor;
 }
 
 function cellClick(e) {
+    doOperation();
     e.target.style.backgroundColor = currentColor;
 }
 
@@ -57,11 +64,13 @@ function createGrid(numberOfRows = DEFAULT_SIZE, numberOfColumns = DEFAULT_SIZE)
     for(let i = 0; i < numberOfRows * numberOfColumns; i++) {
         const cell = document.createElement("div");
         cell.classList.add("cell");
+        cell.draggable = false;
         if(gridOutline) {
             cell.classList.add("cell-border");
         }
-        //cell.addEventListener("mousedown", cellClick);
-        cell.addEventListener("mouseover", cellHover);
+        cell.addEventListener("mousedown", cellClick);
+        cell.addEventListener("mouseenter", cellClickAndHover);
+        cell
 
         grid.appendChild(cell);
     }
@@ -86,10 +95,16 @@ function changeSizeText(e) {
     sizeOutput.textContent = `${val}x${val}`;
 }
 
+function updateImg(lastOperation, currentOperation) {
+    document.querySelector(`.${lastOperation} img`).src = `icons/${lastOperation}-default.png`; //restore default image
+    document.querySelector(`.${currentOperation} img`).src = `icons/${currentOperation}-click.png`;
+}
+
 function changeCurrentColor(e) {
     currentColor = e.target.value;
-    if(currentOperation !== "color") {
-        currentOperation = "color";
+    if(currentOperation !== "draw") {
+        updateImg(currentOperation, "draw");
+        currentOperation = "draw";
     }
 }
 
@@ -100,13 +115,18 @@ function buttonClicked(e) {
         clearGrid();
     }
     else {
+        if(operation === "draw") {
+            currentColor = inputColor.value;
+        }
+        if(operation !== currentOperation) {
+            updateImg(currentOperation, operation);
+        }
         currentOperation = operation;
     }
 }
 
 function buttonsEventListener() {
     for(let i = 0, n = buttons.length; i < n; i++) {
-        console.log(buttons[i]);
         buttons[i].addEventListener("click", buttonClicked);
     }
 }

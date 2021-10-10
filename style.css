@@ -92,7 +92,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    gap: 2rem;
+    gap: 1rem;
     padding-bottom: 2rem;
 }
 
@@ -213,15 +213,17 @@ button {
     justify-content: space-between;
     width: 15rem;
     border: 0px;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     background-color: #0C0C0D;
     color: #F2E205;
     font-size: 1.3rem;
     padding: .3rem 3rem;
+    transition: .5s;
     align-items: center;
 }
 
 button:hover {
+    transform: scale(1.1, 1.1);
     color: white;
 }
 
