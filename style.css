@@ -35,8 +35,8 @@ body {
 #grid {
     display: grid;
     flex: 0 0 auto;
-    width: 512px;
-    height: 512px;
+    width: 640px;
+    height: 640px;
     box-shadow: 0.1rem 0.1rem 1rem 0.1rem #262626;
 }
 
@@ -44,6 +44,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: white;
+    user-select: none;
 }
 
 .cell-border {
@@ -214,7 +215,7 @@ button {
     width: 15rem;
     border: 0px;
     border-radius: 1rem;
-    background-color: #0C0C0D;
+    background-color: #262626;
     color: #F2E205;
     font-size: 1.3rem;
     padding: .3rem 3rem;
