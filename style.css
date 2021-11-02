@@ -239,15 +239,14 @@ button:hover {
 .footer {
     display: flex;
     flex-shrink: 0;
-    height: 3rem;
-    margin-top: 3rem;
+    margin: 3rem 0 0.5rem;
     justify-content: center;
     align-content: center;
     align-items: center;
 }
 
 .footer h2 {
-    margin: 0 0.8rem 0 0;
+    margin-left:0.8rem;
 }
 
 /* GitHub animation */
