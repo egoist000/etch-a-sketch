@@ -246,7 +246,8 @@ button:hover {
 }
 
 .footer h2 {
-    margin-right:0.8rem;
+    margin: 0 0.8rem 0 0;
+    padding: 1rem 0;
 }
 
 /* GitHub animation */
